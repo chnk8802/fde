@@ -5,14 +5,13 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
 import orderRoutes from './routes/orderController.js';
-import { Server } from 'socket.io';
-
 import { initSocket } from './config/socket.js';
 
 dotenv.config();
 
 const app = express();
 const httpServer = createServer(app);
+
 initSocket(httpServer);
 
 connectDB();

@@ -1,12 +1,11 @@
-import { Minus, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import CartControl from "./CartControl";
 
 interface ProductProps {
-  item: { id: number; name: string; price: number; description: string; image: string };
+  item: { id: string; name: string; price: number; description: string; image: string };
   quantity: number;
-  onUpdate: (id: number, delta: number) => void;
+  onUpdate: (id: string, delta: number) => void;
 }
 
 export function ProductCard({ item, quantity, onUpdate }: ProductProps) {
